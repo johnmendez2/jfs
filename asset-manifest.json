@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.7cd6c79c.css",
+    "main.css": "/static/css/main.3c114959.css",
     "main.js": "/static/js/main.866f209f.js",
     "static/js/787.2b6a8a3b.chunk.js": "/static/js/787.2b6a8a3b.chunk.js",
     "static/media/blue.jpg": "/static/media/blue.dfc95b3b25353fb07067.jpg",
     "static/media/BratsyScriptDemo.ttf": "/static/media/BratsyScriptDemo.22b1b659fe8d70182179.ttf",
     "static/media/logo.png": "/static/media/logo.335dfbb9998e4093b5d2.png",
     "index.html": "/index.html",
-    "main.7cd6c79c.css.map": "/static/css/main.7cd6c79c.css.map",
+    "main.3c114959.css.map": "/static/css/main.3c114959.css.map",
     "main.866f209f.js.map": "/static/js/main.866f209f.js.map",
     "787.2b6a8a3b.chunk.js.map": "/static/js/787.2b6a8a3b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7cd6c79c.css",
+    "static/css/main.3c114959.css",
     "static/js/main.866f209f.js"
   ]
 }
