@@ -84,14 +84,14 @@
     .prodimg{
       width: 300px;
       height: 300px;
-      padding: 3%;
+
     }
     .productsbox{
       width: 100%;
       padding: 6% 10%;
       display: flex;
       flex-direction: row;
-      justify-content: left;
+      justify-content: center;
       align-items: left;
       flex-wrap: wrap;
       margin-top: 50px;
@@ -104,14 +104,16 @@
     .title{
       font-weight: 1000%;
       font-size: 40px;
+      margin-bottom: 5%;
     }
     .price{
       font-size: 30px;
-      padding-right: 55px;
+      margin-right: 18%;
       padding-top: 1%;
       float: right;
     }
     .productData{
+      margin-top: 5%;
       width: 100%;
     }
   }
