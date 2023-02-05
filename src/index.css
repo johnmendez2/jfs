@@ -108,7 +108,7 @@ body {
   margin: 0px 10px;  
 }
 
-@media(max-width: 450px){
+@media(min-width: 361px) and (max-width: 450px){
   .navbar .rightside div{
     margin: 10px 0px;    
   }
@@ -154,6 +154,36 @@ body {
   box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 360px) {
+  /* products */
+.products-box{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  background-color: rgb(255, 255, 255);
+  padding: 5%;
+}
+
+.product{
+  width: 350px;
+  height: auto; 
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+  margin-bottom: 50px;
+  transition: all 0.3s ease-in-out;
+  padding-right: 20%;
+  border-radius: 10px; 
+}
+
+.product:hover {
+  box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+  
+}
 @media(min-width: 1024px){
   .product{
     width: 300px;
@@ -224,6 +254,7 @@ body {
 
 .product .product-text.price{
   font-weight: 600;
+  margin-left: 5%;
 }
 
 .product .product-text.cart-price{
