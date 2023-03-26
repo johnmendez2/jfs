@@ -1,11 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-export const IndividualFilteredProduct = ({individualFilteredProduct, addToCart}) => {
+export const IndividualFilteredProduct = ({individualFilteredProduct}) => {
+    const navigate = useNavigate();
 
-    const handleAddToCart=()=>{
-        addToCart(individualFilteredProduct);
-    }
+  const handleProductClick = () => {
+    navigate(`/${individualFilteredProduct.ID}`, { state: { product: individualFilteredProduct } });
+  };
+
 
     const [Text, setText] = useState("ADD TO CART");
     const history = useNavigate();
@@ -18,7 +20,7 @@ export const IndividualFilteredProduct = ({individualFilteredProduct, addToCart}
             <div className='product-text title'>{individualFilteredProduct.title}</div>
             <div className='product-text '>AED {individualFilteredProduct.price}</div>
             <div className='product-text '>Size: {individualFilteredProduct.size}</div>
-            <div className='btn btn-danger btn-md cart-btn' onClick={() => {history('/product',{state:{product:produrl}});}}>DETAILS </div>
+            <div className='btn btn-danger btn-md cart-btn' onClick={handleProductClick}>DETAILS</div>
         </div> 
     )
 }

@@ -27,10 +27,9 @@ export const Navbar = ({user, totalProducts}) => {
                 </div>
             </div>
             <div className='rightside'>
-
                 {!user&&<>
-                    <div><Link className='navlink' to="signup">Sign up</Link></div>
-                    <div><Link className='navlink' to="login">Login</Link></div>
+                    <div><Link className='navlink' to={"/signup"}>Sign up</Link></div>
+                    <div><Link className='navlink' to={"/login"}>Login</Link></div>
                 </>} 
                 {user&&<>
                     <h1 id='label2'> Hi, {user}</h1>
@@ -38,7 +37,7 @@ export const Navbar = ({user, totalProducts}) => {
                     <div className='btn btn-danger btn-md'
                     onClick={handleLogout}>LOGOUT</div>
                 </>}   
-                                   
+                <div><Link className='navlink' to={"/FAQ"}>FAQ's</Link></div>                       
                                 
             </div>
         </div>

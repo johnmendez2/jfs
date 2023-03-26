@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import './styles.css';
 import ImageGallery from 'react-image-gallery';
 
-export default function Productpage({product}){
+export default function Productpage(product){
     function GetUserUid(){
         const [uid, setUid]=useState(null);
         useEffect(()=>{
@@ -19,7 +19,6 @@ export default function Productpage({product}){
     }
 
     const uid = GetUserUid();
-    
 
     // getting current user function
     function GetCurrentUser(){
@@ -44,47 +43,31 @@ export default function Productpage({product}){
     // state of totalProducts
     const [totalProducts, setTotalProducts]=useState(0);
     // getting cart products   
-    useEffect(()=>{        
-        auth.onAuthStateChanged(user=>{
-            if(user){
-                fs.collection('Cart ' + user.uid).onSnapshot(snapshot=>{
-                    const qty = snapshot.docs.length;
-                    setTotalProducts(qty);
-                })
-            }
-        })       
-    },[])  
+
 
 
     const location = useLocation();
     console.log(location)
     let url = location.state.product;
+    console.log(url)
+    const urlId = url.ID;
+    console.log(urlId);
 
 
-    function getProd(){
-        // const ProdRef = collection(fs, 'Products')
-        // getDocs(ProdRef).then(response =>{
-        //     const a = response.docs.map(doc =>({
-        //         data: doc.data(),
-        //         id: doc.id,
-        //     }))
-        //     setProduct(a)
-        // }).catch(error => console.log(error.message))
-        var docRef = fs.collection("Products").doc(url);
-
-        docRef.get().then((doc) => {
-            if (doc.exists) {
-                console.log("Document data:", doc.data());
-                const a = doc.data();
-                setProduct(a)
-            } else {
-                // doc.data() will be undefined in this case
-                console.log("No such document!");
-            }
-        }).catch((error) => {
-            console.log("Error getting document:", error);
-        });
-    }
+    async function getProd() {
+        try {
+          const docRef = fs.collection("Products").doc(urlId);
+          const doc = await docRef.get();
+          if (doc.exists) {
+            const a = doc.data();
+            setProduct(a);
+          } else {
+            console.log("No such document!");
+          }
+        } catch (error) {
+          console.log("Error getting document:", error);
+        }
+      }
     const[prod, setProduct] = useState('');
 
     useEffect(()=>{        
@@ -96,28 +79,7 @@ export default function Productpage({product}){
 
     const history = useNavigate();
     let Product;
-    const addToCart = (product)=>{
-        console.log(product)
-        if(uid!==null){
-            // console.log(product);
-            Product=product;
-            Product['qty']=1;
-            Product['TotalProductPrice']=Product.qty*Product.price;
-            fs.collection('Cart ' + uid).doc(product.ID).set(Product).then(()=>{
-                console.log('successfully added to cart');
-            })
 
-        }
-        else{
-            history('/login');
-        }
-        
-    }
-
-    const handleAddToCart=()=>{
-        addToCart(prod);
-        console.log(prod)
-    }
 
     function ShowImg(){
         if (prod.url2 ==""){
