@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.92b46ca5.css",
-    "main.js": "/static/js/main.9446f9c9.js",
+    "main.js": "/static/js/main.86c46971.js",
     "static/js/787.2b6a8a3b.chunk.js": "/static/js/787.2b6a8a3b.chunk.js",
     "static/media/jfslanding.png": "/static/media/jfslanding.a2d10fd1befa35b0daaf.png",
-    "static/media/jfslanding-mobile.png": "/static/media/jfslanding-mobile.cb315df92f85c00a95cc.png",
+    "static/media/jfslanding-mobile.png": "/static/media/jfslanding-mobile.106d7fcf6b3de01b6545.png",
     "static/media/blue.jpg": "/static/media/blue.dfc95b3b25353fb07067.jpg",
     "static/media/BratsyScriptDemo.ttf": "/static/media/BratsyScriptDemo.22b1b659fe8d70182179.ttf",
     "static/media/logo.png": "/static/media/logo.335dfbb9998e4093b5d2.png",
     "index.html": "/index.html",
     "main.92b46ca5.css.map": "/static/css/main.92b46ca5.css.map",
-    "main.9446f9c9.js.map": "/static/js/main.9446f9c9.js.map",
+    "main.86c46971.js.map": "/static/js/main.86c46971.js.map",
     "787.2b6a8a3b.chunk.js.map": "/static/js/787.2b6a8a3b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.92b46ca5.css",
-    "static/js/main.9446f9c9.js"
+    "static/js/main.86c46971.js"
   ]
 }
