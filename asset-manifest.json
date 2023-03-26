@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.92b46ca5.css",
-    "main.js": "/static/js/main.90c25224.js",
+    "main.js": "/static/js/main.d4a53848.js",
     "static/js/787.2b6a8a3b.chunk.js": "/static/js/787.2b6a8a3b.chunk.js",
     "static/media/jfslanding.png": "/static/media/jfslanding.a2d10fd1befa35b0daaf.png",
     "static/media/jfslanding-mobile.png": "/static/media/jfslanding-mobile.cb315df92f85c00a95cc.png",
@@ -10,11 +10,11 @@
     "static/media/logo.png": "/static/media/logo.335dfbb9998e4093b5d2.png",
     "index.html": "/index.html",
     "main.92b46ca5.css.map": "/static/css/main.92b46ca5.css.map",
-    "main.90c25224.js.map": "/static/js/main.90c25224.js.map",
+    "main.d4a53848.js.map": "/static/js/main.d4a53848.js.map",
     "787.2b6a8a3b.chunk.js.map": "/static/js/787.2b6a8a3b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.92b46ca5.css",
-    "static/js/main.90c25224.js"
+    "static/js/main.d4a53848.js"
   ]
 }
