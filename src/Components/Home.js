@@ -28,7 +28,7 @@ export const Home = (props) => {
             auth.onAuthStateChanged(user=>{
                 if(user){
                     fs.collection('users').doc(user.uid).get().then(snapshot=>{
-                        setUser(snapshot.data().Name);
+                        setUser(snapshot.data().FullName);
                     })
                 }
                 else{
@@ -115,6 +115,7 @@ export const Home = (props) => {
         {id: 'M', text: 'M'},
         {id: 'L', text: 'L'},
         {id: 'XL', text: 'XL'},           
+        {id: 'XXL', text: 'XXL'}, 
     ])
     
     // active class state
@@ -181,12 +182,7 @@ export const Home = (props) => {
             <br></br>
             <div className='container-fluid filter-products-main-box'>
                 <div className='filter-box' >
-                    {/* <h6>Filter by category</h6>
-                    {spans.map((individualSpan,index)=>(
-                        <span key={index} id={individualSpan.id}
-                        onClick={()=>handleChange(individualSpan)}
-                        className={individualSpan.id===active ? active:'deactive'}>{individualSpan.id}</span>
-                    ))} */}
+
 
                     <div class="dropdown">
                     <button class="dropbtn">Filter by League</button>
@@ -211,8 +207,6 @@ export const Home = (props) => {
                 </div>
                 {filteredProducts.length > 0&&(
                   <div className='my-products'>
-                      <h1 className='text-center'>{category}</h1>
-                      <a className="return" href="javascript:void(0)" onClick={returntoAllProducts} >Return to All Products</a>
                       <div className='products-box'>
                           {filteredProducts.map(individualFilteredProduct=>(
                               <IndividualFilteredProduct key={individualFilteredProduct.ID}
@@ -226,7 +220,6 @@ export const Home = (props) => {
                     <>
                         {products.length > 0&&(
                             <div className='my-products'>
-                                <h1 className='text-center'>Collection</h1>
                                 <div className='products-box'>
                                     <Products products={products} addToCart={addToCart}/>
                                 </div>

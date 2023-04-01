@@ -18,13 +18,13 @@ export const Login = () => {
         e.preventDefault();
         // console.log(email, password);
         auth.signInWithEmailAndPassword(email,password).then(()=>{
-            setSuccessMsg('Login Successfull. You will now automatically get redirected to Home page');
+            setSuccessMsg('Login Successfull. You will now automatically get redirected to the products page');
             setEmail('');
             setPassword('');
             setErrorMsg('');
             setTimeout(()=>{
                 setSuccessMsg('');
-                history('/');
+                history('/products');
             },3000)
         }).catch(error=>setErrorMsg(error.message));
     }

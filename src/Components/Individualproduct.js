@@ -3,9 +3,13 @@ import { useNavigate } from 'react-router-dom';
 
 export const IndividualProduct = ({ individualProduct }) => {
   const navigate = useNavigate();
+  let productName = '';
+    productName = individualProduct.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  
+  
 
   const handleProductClick = () => {
-    navigate(`/${individualProduct.ID}`, { state: { product: individualProduct } });
+    navigate(`/${individualProduct.ID}-${productName}`, { state: { product: individualProduct } });
   };
 
   return (

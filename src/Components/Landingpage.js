@@ -22,7 +22,7 @@ export default function Frontpage({ products, addToCart }) {
         padding: 0,
         boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)',
         overflow: 'hidden',
-        borderRadius: '8px',
+        borderRadius: 0,
         willChange: 'transform',
       }}
     >
@@ -35,13 +35,14 @@ export default function Frontpage({ products, addToCart }) {
           width: '100%',
           height: '100%',
           objectFit: 'cover',
+          borderRadius: 0,
         }}
         alt="JFS Landing Page"
       />
       <div
         style={{
           position: 'absolute',
-          top: isMobile ? '65%' : '70%',
+          top: isMobile ? '65%' : '72%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
           textAlign: 'center',
@@ -51,17 +52,18 @@ export default function Frontpage({ products, addToCart }) {
           to="/products"
           style={{
             display: 'inline-block',
-            background: '#000000',
+            background: 'transparent',
             color: '#fff',
-            fontSize: isMobile ? '16px' : '24px',
-            padding: isMobile ? '20px 30px' : '20px 40px',
+            fontSize: isMobile ? '20px' : '36px',
+            padding: isMobile ? '1px 1px' : '20px 40px',
             borderRadius: '4px',
             textDecoration: 'none',
+            fontWeight: 'bold',
             textTransform: 'uppercase',
             transition: 'background 0.3s ease',
           }}
         >
-          {isMobile ? 'Open the vault' : 'Open the vault'}
+          {isMobile ? 'Open the vault →' : 'Open the vault →'}
         </Link>
       </div>
     </div>

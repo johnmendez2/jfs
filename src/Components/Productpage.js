@@ -4,7 +4,7 @@ import { auth,fs } from '../Config/config';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './styles.css';
 import ImageGallery from 'react-image-gallery';
-
+import { Helmet, HelmetProvider  } from 'react-helmet-async';
 export default function Productpage(product){
     function GetUserUid(){
         const [uid, setUid]=useState(null);
@@ -17,6 +17,8 @@ export default function Productpage(product){
         },[])
         return uid;
     }
+
+    
 
     const uid = GetUserUid();
 
@@ -45,13 +47,9 @@ export default function Productpage(product){
     // getting cart products   
 
 
-
     const location = useLocation();
-    console.log(location)
-    let url = location.state.product;
-    console.log(url)
-    const urlId = url.ID;
-    console.log(urlId);
+    const urlId = location.pathname.split('-')[0].split('/').pop();
+console.log(urlId);
 
 
     async function getProd() {
@@ -103,28 +101,35 @@ export default function Productpage(product){
 
     
     const [Text, setText] = useState("BUY VIA DEPOP");
-    return(
-        
-        <div>
-            
-            <Navbar user={user} totalProducts={totalProducts}></Navbar>
-            <div className='productsbox'>
+    return (
+        <HelmetProvider>
+            <div>
+            <Helmet>
+        <meta property="og:title" content={prod.title} />
+        <meta property="og:description" content={prod.description} />
+        <meta property="og:image" content={prod.img} />
+        <meta property="og:url" content={`https://johnsfootballshirts.com/${urlId}`} />
+        <meta name="geography" content="United Arab Emirates, UAE" />
+        <meta name="country" content="UAE, United Arab Emirates, Arab Emirates" />
+        <meta name="language" content="English" />
+      </Helmet>
+          <Navbar user={user} totalProducts={totalProducts} />
+          <div className='productsbox'>
             <div className='productPrev'>
-                <ShowImg/>
+              <ShowImg />
             </div>
             <div className='productData'>
-            <h1 className='title'>
-                {prod.title}
-                </h1>
-                <div className='btn btn-danger prodbtn' onClick={() => {window.open(prod.depopURL)}}>{Text}</div>
-                <h1 className='price'>
-                AED{prod.price}
-                </h1>
-                <p className='desc'>
-                {prod.description}
-                </p>
+              <h1 className='title'>{prod.title}</h1>
+              <h2 className='size'>Size: {prod.size}</h2>
+              <div className='btn btn-danger prodbtn' onClick={() => window.open(prod.depopURL)}>
+                {Text}
+              </div>
+              <h1 className='price'>AED{prod.price}</h1>
+              <p className='desc'>{prod.description}</p>
             </div>
-            </div>
+          </div>
         </div>
-    )
+        </HelmetProvider>
+        
+      );
 }
