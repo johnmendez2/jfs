@@ -1,0 +1,15 @@
+import React from 'react'
+import { IndividualProduct } from './Individualproduct'
+import { ADIndividualProduct } from './ADIndividualprod'
+
+
+export default function Products({ products, addToCart }) {
+    console.log(products)
+    return products.map((individualProduct) => (
+        <ADIndividualProduct key={individualProduct.ID} individualProduct={individualProduct}
+            addToCart={addToCart}
+        />
+
+    ))
+
+}
